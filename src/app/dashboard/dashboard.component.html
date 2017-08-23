@@ -1,8 +1,13 @@
-<h5>Players</h5>
-<div>
-  <a *ngFor="let player of players" [routerLink]="['/detail', player.id]">
-    <div>
-      <p>{{player.name}}</p>
-    </div>
-  </a>
+<div fxLayout="">
+  <div>
+    <md-card *ngFor="let player of players" [routerLink]="['/detail', player.id]">
+      <md-card-header>
+        <h2>{{player.name}}</h2>
+      </md-card-header>
+      <md-card-content>
+        <p>{{player.name}} is number {{player.id}}</p>
+      </md-card-content>
+    </md-card>
+  </div>
 </div>
+
