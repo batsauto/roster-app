@@ -11,10 +11,13 @@ import { PlayerService } from '../player.service';
 export class DashboardComponent implements OnInit {
   players: Player[] = [];
 
-  constructor(private playerService: PlayerService) { }
+  constructor(
+    private playerService: PlayerService) { }
 
   ngOnInit(): void {
     this.playerService.getPlayers()
-      .then(players => this.players = players.slice(1, 5));
+      .map(players => this.players = players)
+      .subscribe();
   }
+
 }

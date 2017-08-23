@@ -27,15 +27,18 @@ export class PlayerService {
 
   getPlayers(): Observable<Player[]> {
     this.logger.log('Getting customers as an Observable via Http ...');
-    return this.http.get(this.playersUrl)
+    return this.http
+      .get(this.playersUrl)
       .map(response => response.json().data as Player[])
       .do(players => this.logger.log(`Got ${players.length} customers`))
       .catch(error => this.handleError(error));
   }
 
   getPlayer(id: number): Observable<Player> {
+    this.logger.log('Getting states as an Observable via Http ...');
     const url =  `${this.playersUrl}/${id}`;
-    return this.http.get(url)
+    return this.http
+      .get(url)
       .map(response => response.json().data as Player)
       .catch(error => this.handleError(error));
   }

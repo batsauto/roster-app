@@ -1,3 +1,8 @@
-<p>
-  dashboard works!
-</p>
+<h5>Players</h5>
+<div>
+  <a *ngFor="let player of players" [routerLink]="['/detail', player.id]">
+    <div>
+      <p>{{player.name}}</p>
+    </div>
+  </a>
+</div>
