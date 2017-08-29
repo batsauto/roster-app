@@ -20,13 +20,15 @@ import { TeamService } from './team.service';
 import {LoggerService} from './logger.service';
 
 import 'hammerjs';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    PlayersComponent
+    PlayersComponent,
+    PlayerDetailComponent
   ],
   imports: [
     BrowserModule,
